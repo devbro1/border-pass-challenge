@@ -97,7 +97,7 @@ export const SubmitButton: React.FC<PropType> = (props) => {
 
   return (
     <input
-    className="embla__button embla__button--next"
+    className="border-0 border-black hover:text-purple-500 rounded-full"
       type="submit"
       name="submit"
       value='Submit'

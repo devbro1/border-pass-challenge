@@ -9,7 +9,7 @@ import {
 import useEmblaCarousel from 'embla-carousel-react'
 
 type PropType = {
-  slides: number[]
+  slides: React.ReactNode[]
   options?: EmblaOptionsType
 }
 
@@ -28,16 +28,16 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
+          {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
-              <div>{index}</div>
+              <div>{slide}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="embla__controls">
-        <div className="embla__buttons">
+      <div className="">
+        <div className="flex justify-end">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           {!nextBtnDisabled && <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />}
           {nextBtnDisabled && <SubmitButton />}
