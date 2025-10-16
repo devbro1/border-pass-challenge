@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="w-screen mx-auto text-center">
       <h1>Please Answer following questions:</h1>
       <div className="card">
         <FormComp
@@ -50,7 +50,7 @@ function App() {
         <EmblaCarousel slides={slides} options={options} />
      </FormComp>
       </div>
-    </>
+    </div>
   )
 }
 

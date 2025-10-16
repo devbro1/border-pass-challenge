@@ -2,7 +2,7 @@ import React from 'react'
 
 const SuccessPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen w-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <div className="mx-auto flex items-center justify-center h-24 w-24 rounded-full bg-green-100 mb-4">
