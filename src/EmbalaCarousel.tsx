@@ -25,11 +25,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi)
 
   return (
-    <section className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
+    <section className="lg:max-w-2/3 mx-auto">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex touch-pan-y">
           {slides.map((slide, index) => (
-            <div className="embla__slide" key={index}>
+            <div className="flex-[0_0_100%] min-w-0" key={index}>
               <div>{slide}</div>
             </div>
           ))}
