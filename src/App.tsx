@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import React, { useState } from 'react';
 import './App.css';
 import { EmblaOptionsType } from 'embla-carousel';
 import EmblaCarousel from './EmbalaCarousel';
@@ -9,14 +7,13 @@ import { FormComp, SelectComp, TextInputComp } from './components';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Question } from './Question';
+import SuccessPage from './SuccessPage';
 
 function App() {
   const options: EmblaOptionsType = { containScroll: false };
-  const slides = questions.map((v) => <div>
-    <div className="text-base font-bold">Q: {v.question}{v.required ? <span className={'text-red-500'}> *</span> : ''}</div>
-    {v.type === 'text' ? (<TextInputComp name={v.id} required={v.required} />) : null}
-    {v.type === 'select' ? (<SelectComp name={v.id} placeholder=' -- Select One Option -- ' options={v.options} required={v.required} />) : null}
-  </div>);
+  const slides = questions.map((v) => <Question question={v} key={v.id} />);
+  const [showSuccess, setShowSuccess] =  useState(false);
 
   const validationShape: any = {};
   questions.map((v) => {
@@ -32,7 +29,12 @@ function App() {
 
   const submitForm = (data: any) => {
     console.log('Form submitted:', data);
+    setShowSuccess(true);
   };
+
+  if(showSuccess) {
+    return (<SuccessPage />);
+  }
 
   return (
     <>

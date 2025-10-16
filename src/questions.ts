@@ -1,21 +1,6 @@
-type QuestionText = {
-    id: string;
-    question: string;
-    type: 'text'; 
-    required: boolean;
-}
+import { QuestionType } from './types';
 
-type QuestionSelect = {
-    id: string;
-    question: string;
-    type: 'select';
-    options: string[];
-    required: boolean;
-}
-
-export type Question = QuestionText | QuestionSelect;
-
-export const questions: Question[] = [
+export const questions: QuestionType[] = [
     {
         id: "full_name",
         question: "What is your full name?",
